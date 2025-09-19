@@ -33,6 +33,10 @@ app.use("/api/auth", authRoutes);
 app.use("/uploads", express.static("uploads"));
 app.use("/api", menuRoutes);
 
+
+app.get("/", (req, res) => {
+  res.json({ message: "Backend is working!" });
+});
 // Start scheduler
 scheduler.start();
 
